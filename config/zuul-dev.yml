@@ -1,11 +1,14 @@
+
 spring:
   application:
     name: zuul
   rabbitmq:
-      host: 192.168.187.132
-      port: 5672
-      username: admin
-      password: admin    
+    host: 192.168.187.132
+    port: 5672
+    username: admin
+    password: admin
+
+    
 server:
   port: 3001
   
@@ -16,12 +19,19 @@ eureka:
 
 zuul:
   retryable: true
+
+#zuul:
+#  routes:
+#    item-service: /item-service/**
+#    user-service: /user-service/**
+#    order-service: /order-service/**
     
 ribbon:
   ConnectTimeout: 1000
-  ReadTimeout: 2000
+  ReadTimeout: 1000
   MaxAutoRetriesNextServer: 1
   MaxAutoRetries: 1
+  
   
 hystrix:
   command:
@@ -36,3 +46,8 @@ management:
     web:
       exposure:
         include: hystrix.stream
+            
+            
+  
+  
+  
